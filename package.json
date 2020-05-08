@@ -1,0 +1,24 @@
+{
+  "name": "amis-sms-code-renderer",
+  "version": "1.0.0",
+  "main": "src/index.tsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.34",
+    "amis": "^1.0.10",
+    "react": "^16.13.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenos/amis-sms-code-renderer.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chenos/amis-sms-code-renderer/issues"
+  },
+  "homepage": "https://github.com/chenos/amis-sms-code-renderer#readme",
+  "description": ""
+}
