@@ -1,5 +1,5 @@
 {
-  "name": "amis-sms-code-renderer",
+  "name": "amis-sms-code-control",
   "version": "1.0.0",
   "main": "src/index.tsx",
   "scripts": {
@@ -12,13 +12,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chenos/amis-sms-code-renderer.git"
+    "url": "git+https://github.com/chenos/amis-sms-code-control.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chenos/amis-sms-code-renderer/issues"
+    "url": "https://github.com/chenos/amis-sms-code-control/issues"
   },
-  "homepage": "https://github.com/chenos/amis-sms-code-renderer#readme",
+  "homepage": "https://github.com/chenos/amis-sms-code-control#readme",
   "description": ""
 }
