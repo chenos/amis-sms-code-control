@@ -1,33 +1,20 @@
 import * as React from 'react';
-// @ts-ignore
 import { FormItem } from 'amis';
-// @ts-ignore
 import Input from 'amis/lib/components/Input';
 import get from 'lodash/get';
 
-export interface RenderProps {
-  type: 'sms-code';
-  label?: string;
-  placeholder?: string;
-  name?: string;
-  phoneField?: string;
-  api?: any;
-  [key: string]: any;
-}
+export class SmsCodeControl extends React.Component {
 
-@FormItem({
-  type: 'sms-code',
-})
-// @ts-ignore
-export class SmsCodeControl extends React.Component<RenderProps, any> {
-  state = {
-    text: "发送验证码",
-    disabled: false,
-  };
+  constructor(props) {
+    super(props);
+    this.interval = null;
+    this.state = {
+      text: "发送验证码",
+      disabled: false,
+    };
+  }
 
-  interval = null;
-
-  countDown = (i) => {
+  countDown(i) {
     this.setState({disabled: true});
     this.interval = setInterval(() => {
       this.setState({text: i+' 后重新获取'});
@@ -86,3 +73,7 @@ export class SmsCodeControl extends React.Component<RenderProps, any> {
     );
   }
 }
+
+export default FormItem({
+  type: 'sms-code',
+})(SmsCodeControl);
