@@ -9,25 +9,26 @@ export class SmsCodeControl extends React.Component {
     super(props);
     this.interval = null;
     this.state = {
-      text: "发送验证码",
+      text: '',
       disabled: false,
     };
   }
 
   countDown(i) {
+    const { buttonText = '发送验证码' } = props;
     this.setState({disabled: true});
     this.interval = setInterval(() => {
       this.setState({text: i+' 后重新获取'});
       i--;
       if (!i) {
         clearInterval(this.interval);
-        this.setState({text: '发送验证码', disabled: false});
+        this.setState({text: buttonText, disabled: false});
       }
     }, 1000);
   }
 
   render() {
-    const {api, name, placeholder, value = '', phoneField = 'phone', onChange, formStore, env} = this.props;
+    const {api, name, placeholder, value = '', phoneField = 'phone', buttonText = '发送验证码', onChange, formStore, env} = this.props;
     return (
       <div style={{display: 'flex'}}>
         <span style={{marginRight: 10, width: '100%'}}>
@@ -58,7 +59,7 @@ export class SmsCodeControl extends React.Component {
                 })
                 .catch(e => {
                   clearInterval(this.interval);
-                  this.setState({text: '发送验证码', disabled: false});
+                  this.setState({text: buttonText, disabled: false});
                   if (env.isCancel(e)) {
                     return;
                   }
@@ -66,7 +67,7 @@ export class SmsCodeControl extends React.Component {
                 });
             }}
           >
-            <span>{this.state.text}</span>
+            <span>{this.state.text || buttonText}</span>
           </button>
         </span>
       </div>
