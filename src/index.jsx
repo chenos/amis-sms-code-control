@@ -15,7 +15,7 @@ export class SmsCodeControl extends React.Component {
   }
 
   countDown(i) {
-    const { buttonText = '发送验证码' } = props;
+    const { buttonText = '发送验证码' } = this.props;
     this.setState({disabled: true});
     this.interval = setInterval(() => {
       this.setState({text: i+' 后重新获取'});
